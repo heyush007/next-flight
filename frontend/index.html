@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/aboutus.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Simple Flight Simulator</title>
+</head>
+<header>
+    <img src=".//images/logo.png" alt="Flight Sim Logo" id="logo">
+    <h1>Next Gen Flight Sim</h1>
+    <div id="user-info" class="hidden">
+        <span id="username-display"></span>
+        <span id="fuel-display"></span>
+    </div>
+</header>
+<body>
+    <section id="auth-section">
+        <div id="form-container">
+            <input type="text" id="username" placeholder="Enter your username">
+            <button id="start-game">Start Game</button>
+        </div>
+    </section>
+    
+    <section id="game-section" class="hidden">
+        <div class="airport-selection">
+            <h2>Game Section</h2>
+            <div id="welcome-message" style="display:none; font-size: 20px; margin-top: 20px;"></div>
+            <div id="airport-selection" style="display:block;">
+                <label for="departure-airport">Departure Airport:</label>
+                <select id="departure-airport"></select>
+            
+                <label for="arrival-airport">Arrival Airport:</label>
+                <select id="arrival-airport"></select>
+                <button id="schedule-flight">Schedule Flight</button>
+            </div>
+            <div class="map-container">
+                <div id="map" style="height: 400px; width: 100%;"></div> 
+            </div>
+            <div id="distance-display" style="position: absolute; top: 10px; right: 10px; background: white; padding: 5px; border: 1px solid black; color: black;"></div>
+            <div id="weather-display" style="position: absolute; top: 80px; right: 10px; background: white; padding: 5px; border: 1px solid black; color: black;"></div>
+        </div>
+
+        <div id="hurdle-section" style="display:none;">
+            <p id="hurdle-description"></p>
+            <button id="option-1">Option 1</button>
+            <button id="option-2">Option 2</button>
+        </div>
+        
+        <div id="result-section" style="display:none;">
+            <p id="result-message"></p>
+        </div>
+        
+        <button id="start-flight">Start Flight</button>
+    </section>
+
+    <!-- External Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/game.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
